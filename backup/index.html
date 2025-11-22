@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Junoon</title>
+<link rel="icon" href="https://i.ibb.co/4nJCNwnx/image.png" type="image/png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Animated Background Elements -->
+<div class="nebula-bg"></div>
+<div class="floating-shapes">
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+  <div class="shape shape-3"></div>
+  <div class="shape shape-4"></div>
+</div>
+<div class="particle-network"></div>
+
+<!-- Premium Header -->
+<header class="crystal-header">
+  <div class="header-glow"></div>
+  <div class="logo-master">
+    <div class="logo-orb">✦</div>
+    <div class="logo-text">
+      <span class="logo-main">JUNOON</span>
+      <span class="logo-tag">ELITE</span>
+    </div>
+  </div>
+  
+  <nav class="nav-premium">
+    <div class="nav-item active" data-section="home">
+      <div class="nav-glow"></div>
+      <span class="nav-icon">⌂</span>
+      <span class="nav-label">Home</span>
+    </div>
+    <div class="nav-item" data-section="about">
+      <div class="nav-glow"></div>
+      <span class="nav-icon">🌟</span>
+      <span class="nav-label">About Us</span>
+    </div>
+  </nav>
+
+  <button class="cta-magnetic">
+    <div class="cta-sparkles">
+      <span></span><span></span><span></span>
+    </div>
+    <svg class="discord-logo" width="20" height="20" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.18.33.25c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+    </svg>
+    <span class="cta-text">JOIN DISCORD</span>
+    <div class="cta-aura"></div>
+  </button>
+</header>
+
+<!-- Home Section - Only Vouches -->
+<section id="home-section" class="section active">
+  <!-- Search Section -->
+  <div class="search-nexus">
+    <div class="search-crystal">
+      <div class="search-orb">🔍</div>
+      <div class="search-ripple"></div>
+      <div class="search-beams">
+        <div class="beam"></div>
+        <div class="beam"></div>
+        <div class="beam"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vouches Gallery -->
+  <section class="gallery-dimension">
+    <div class="gallery-header">
+      <div class="section-sparkle"></div>
+      <h2>Our Vouches</h2>
+      <div class="section-underline"></div>
+    </div>
+    
+    <div id="vouchContainer" class="cards-matrix"></div>
+    
+    <!-- Pagination -->
+    <div class="pagination-container">
+      <div class="pagination">
+        <button class="page-btn prev-btn" disabled>
+          <span>←</span> Previous
+        </button>
+        <div class="page-numbers" id="pageNumbers"></div>
+        <button class="page-btn next-btn">
+          Next <span>→</span>
+        </button>
+      </div>
+      <div class="page-info">
+        Showing <span id="currentRange">1-9</span> of <span id="totalVouches">0</span> testimonials
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- About Us Section - With Hero -->
+<section id="about-section" class="section">
+  <!-- Hero Section -->
+  <section class="hero-nexus">
+    <div class="hero-orbit">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+      <div class="orbit-ring ring-3"></div>
+    </div>
+    
+    <div class="hero-content">
+      <div class="title-matrix">
+        <h1 class="title-primary">JUNOON</h1>
+        <div class="title-sub">WHERE SOULS</div>
+        <div class="title-spark">CONNECT</div>
+      </div>
+      
+      <p class="hero-desc">An exclusive sanctuary for meaningful connections. Where every interaction is curated, every moment is magical, and every connection is destined.</p>
+      
+      <div class="hero-stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">99%</div>
+          <div class="stat-label">Success Rate</div>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">5.0</div>
+          <div class="stat-label">Premium Rating</div>
+          <div class="stat-glow"></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">Elite Support</div>
+          <div class="stat-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <div class="about-nexus">
+    <div class="about-container">
+      <div class="about-hero">
+        <div class="hero-animation">
+          <div class="hero-orb large"></div>
+          <div class="hero-orb medium"></div>
+          <div class="hero-orb small"></div>
+        </div>
+        <div class="about-content">
+          <h2 class="about-title">The <span class="gradient-text">Junoon</span> Story</h2>
+          <p class="about-desc">
+            Junoon isn't just a community—it's a movement. Born from the passion to create meaningful connections in a digital world, 
+            we've cultivated an exclusive sanctuary where genuine relationships flourish. Our curated approach ensures that every 
+            connection is meaningful and every moment counts.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <div class="feature-icon">💫</div>
+              <div class="feature-text">Curated Matching</div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">🌟</div>
+              <div class="feature-text">Elite Community</div>
+            </div>
+            <div class="feature">
+              <div class="feature-icon">⚡</div>
+              <div class="feature-text">Instant Connections</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="quantum-footer">
+  <div class="footer-nexus">
+    <div class="footer-orb">✦</div>
+    <div class="footer-text">
+      <div class="footer-title">JUNOON ELITE</div>
+      <div class="footer-sub">Where Destiny Meets Connection</div>
+    </div>
+    <div class="footer-aura"></div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector("button.cta-magnetic").addEventListener("click", () => {
+      window.location.href = "https://discord.gg/junoon";
+    });
+  });
+</script>
+</body>
+</html>
