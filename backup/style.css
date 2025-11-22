@@ -812,6 +812,8 @@ body {
     width: 100px;
     height: 100px;
     animation-delay: 4s;
+
+
 }
 
 @keyframes orbFloat {
@@ -1234,4 +1236,29 @@ body {
         padding: 10px 16px;
         font-size: 13px;
     }
+
+
+}
+
+/* DISCORD MENTION STYLE (Perfect for your theme) */
+.discord-mention {
+    display: inline-block;
+    background: rgba(88, 101, 242, 0.25); /* Discord blurple, soft */
+    color: #b9c3ff; /* Slight bluish-white */
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.16s ease;
+    text-shadow: 0 0 6px rgba(88,101,242,0.6); /* neon glow effect */
+    box-shadow: 0 0 12px rgba(88,101,242,0.3);
+    border: 1px solid rgba(88,101,242,0.35);
+}
+
+.discord-mention:hover {
+    background: rgba(88,101,242,0.45);
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(88,101,242,0.6);
+    transform: translateY(-2px);
 }
