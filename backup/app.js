@@ -45,15 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load all vouches
 async function loadVouches() {
     try {
-        let oldCount = allVouches.length;
+        let oldLength = allVouches.length;
+        let oldPage = currentPage;
 
         let res = await fetch("https://vouch-api-u8zv.onrender.com/vouches/?c=" + Date.now());
         let newData = await res.json();
 
         allVouches = newData;
 
-        // Only reset pagination IF new vouches were added
-        if (allVouches.length !== oldCount) {
+        const totalPages = Math.ceil(allVouches.length / vouchesPerPage);
+
+        // Ensure currentPage is never out of range
+        if (oldPage > totalPages) {
+            currentPage = totalPages;
+        } else {
+            currentPage = oldPage;
+        }
+
+        // Rebuild pagination ONLY if number of pages changed
+        if (oldLength !== allVouches.length) {
             setupPagination();
         }
 
@@ -63,6 +73,7 @@ async function loadVouches() {
         console.error("Error loading vouches:", error);
     }
 }
+
 
 
 // Display vouches for current page
@@ -147,26 +158,29 @@ function esc(s) {
 
 function formatMsg(v) {
     let msg = v.message;
-    
-    // Process mentions on the raw message
+
     if (v.mentioned_users && v.mentioned_users.length > 0) {
         v.mentioned_users.forEach(user => {
             const displayName = user.display_name || user.username;
+
+            const discordMentionHTML =
+                `<span class="discord-mention" onclick="window.open('https://discord.com/users/${user.id}', '_blank')">@${displayName}</span>`;
+
             const pattern1 = new RegExp(`<@${user.id}>`, 'g');
             const pattern2 = new RegExp(`<@!${user.id}>`, 'g');
-            
-            msg = msg.replace(pattern1, `@${displayName}`);
-            msg = msg.replace(pattern2, `@${displayName}`);
+
+            msg = msg.replace(pattern1, discordMentionHTML);
+            msg = msg.replace(pattern2, discordMentionHTML);
         });
     }
-    
-    // Clean any remaining mentions
-    msg = msg.replace(/<@!?\d+>/g, '@user');
-    
-    // NOW escape for HTML safety
-    msg = esc(msg);
-    
-    return msg;
+
+    // Replace any unknown mentions
+    msg = msg.replace(/<@!?(.*?)>/g, (match, id) => {
+    return `<span class="discord-mention" data-id="${id}">@${id}</span>`;
+});
+
+
+    return msg; // DO NOT ESCAPE — we want HTML output
 }
 
 function card(v, i) {
