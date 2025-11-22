@@ -45,14 +45,25 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load all vouches
 async function loadVouches() {
     try {
+        let oldCount = allVouches.length;
+
         let res = await fetch("https://vouch-api-u8zv.onrender.com/vouches/?c=" + Date.now());
-        allVouches = await res.json();
+        let newData = await res.json();
+
+        allVouches = newData;
+
+        // Only reset pagination IF new vouches were added
+        if (allVouches.length !== oldCount) {
+            setupPagination();
+        }
+
         displayVouches();
-        setupPagination();
+
     } catch (error) {
         console.error("Error loading vouches:", error);
     }
 }
+
 
 // Display vouches for current page
 function displayVouches() {
@@ -171,10 +182,11 @@ function card(v, i) {
             <span class="id-badge">#${String(i).padStart(3, "0")}</span>
         </div>
         <p class="message">${finalMsg}</p>
-        <span class="timestamp">${new Date(v.timestamp).toLocaleString()}</span>
+        <!-- Removed timestamp completely -->
     `;
     return d;
 }
+
 
 // Auto-refresh vouches on home section
 setInterval(() => {
